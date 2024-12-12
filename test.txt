@@ -21,7 +21,7 @@ New-ADUser -GivenName "Davy" -Surname "Vliegen" -Name "Davy Vliegen" -DisplayNam
 Add-ADGroupMember -Identity Research -Members Davy
 New-ADUser -GivenName "Scott" -Surname "Brown" -Name "Scott Brown" -DisplayName "Scott Brown" -City "London" -Country "GB" -UserPrincipalName "Scott@Adatum.com" -SamAccountName "Scott" -PasswordNeverExpires $true -Department "Research" -Company "Adatum" -Path "OU=Research,DC=Adatum,DC=com" -AccountPassword $password -Enabled $true
 Add-ADGroupMember -Identity Research -Members Scott
-New-ADUser -GivenName "Alice" -Surname "Ciccu" -Name "Alice Ciccu" -DisplayName "Alice Ciccu" -City "Seattle" -Country "US" -UserPrincipalName "Alice@Adatum.com" -SamAccountName "Alice" -PasswordNeverExpires $true -Department "Marketing" -Company "Adatum" -Path "Marketing=Users,DC=Adatum,DC=com" -AccountPassword $password -Enabled $true
+New-ADUser -GivenName "Alice" -Surname "Ciccu" -Name "Alice Ciccu" -DisplayName "Alice Ciccu" -City "Seattle" -Country "US" -UserPrincipalName "Alice@Adatum.com" -SamAccountName "Alice" -PasswordNeverExpires $true -Department "Marketing" -Company "Adatum" -Path "OU=Marketing,DC=Adatum,DC=com" -AccountPassword $password -Enabled $true
 Add-ADGroupMember -Identity Marketing -Members Alice
 New-ADUser -GivenName "Terry" -Surname "Earls" -Name "Terry Earls" -DisplayName "Terry Earls" -City "London" -Country "GB" -UserPrincipalName "Terry@Adatum.com" -SamAccountName "Terry" -PasswordNeverExpires $true -Department "IT" -Company "Adatum" -Path "OU=IT,DC=Adatum,DC=com" -AccountPassword $password -Enabled $true
 Add-ADGroupMember -Identity IT -Members Terry
