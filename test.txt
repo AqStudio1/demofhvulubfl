@@ -1,5 +1,9 @@
 Import-Module ActiveDirectory
 
+New-ADClaimType -DisplayName "City" -Description "Locality-Name" -SourceAttribute "l" -ProtectedFromAccidentalDeletion $True
+New-ADClaimType -DisplayName "Country" -Description "Country-Name" -SourceAttribute "c" -ProtectedFromAccidentalDeletion $True
+New-ADClaimType -DisplayName "Department" -Description "Department" -SourceAttribute "department" -ProtectedFromAccidentalDeletion $True
+
 Remove-ADUser -Identity "Jon" -Confirm:$false
 Remove-ADUser -Identity "Terry" -Confirm:$false
 
@@ -32,9 +36,7 @@ Add-ADGroupMember -Identity IT -Members Jane
 New-ADUser -GivenName "Jon" -Surname "Cantrell" -Name "Jon Cantrell" -DisplayName "Jon Cantrell" -City "London" -Country "GB" -UserPrincipalName "Jon@Adatum.com" -SamAccountName "Jon" -PasswordNeverExpires $true -Department "IT" -Company "Adatum" -Path "OU=IT,DC=Adatum,DC=com" -AccountPassword $password -Enabled $true
 Add-ADGroupMember -Identity IT -Members Jon
 
-New-ADClaimType -DisplayName "City" -Description "Locality-Name" -SourceAttribute "l" -ProtectedFromAccidentalDeletion $True
-New-ADClaimType -DisplayName "Country" -Description "Country-Name" -SourceAttribute "c" -ProtectedFromAccidentalDeletion $True
-New-ADClaimType -DisplayName "Department" -Description "Department" -SourceAttribute "department" -ProtectedFromAccidentalDeletion $True
+
 
 
 NOTE: add all users in groups as well as OUs
