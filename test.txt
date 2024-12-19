@@ -1,9 +1,5 @@
 Import-Module ActiveDirectory
 
-New-ADClaimType -DisplayName "City" -Description "Locality-Name" -SourceAttribute "l" -ProtectedFromAccidentalDeletion $True
-New-ADClaimType -DisplayName "Country" -Description "Country-Name" -SourceAttribute "c" -ProtectedFromAccidentalDeletion $True
-New-ADClaimType -DisplayName "Department" -Description "Department" -SourceAttribute "department" -ProtectedFromAccidentalDeletion $True
-
 Remove-ADUser -Identity "Jon" -Confirm:$false
 Remove-ADUser -Identity "Terry" -Confirm:$false
 
@@ -35,81 +31,3 @@ New-ADUser -GivenName "Jane" -Surname "Dow" -Name "Jane Dow" -DisplayName "Jane 
 Add-ADGroupMember -Identity IT -Members Jane
 New-ADUser -GivenName "Jon" -Surname "Cantrell" -Name "Jon Cantrell" -DisplayName "Jon Cantrell" -City "London" -Country "GB" -UserPrincipalName "Jon@Adatum.com" -SamAccountName "Jon" -PasswordNeverExpires $true -Department "IT" -Company "Adatum" -Path "OU=IT,DC=Adatum,DC=com" -AccountPassword $password -Enabled $true
 Add-ADGroupMember -Identity IT -Members Jon
-
-
-
-
-NOTE: add all users in groups as well as OUs
-
-
-
-
-Remove-Item -Path "C:\Labfiles" -Recurse -Force
-
-$zipFileUrl = "https://github.com/AqStudio1/LON-DC1_C/archive/refs/heads/main.zip"
-$zipFilePath = "C:\Users\Administrator\Downloads\repository.zip"
-
-Invoke-WebRequest -Uri $zipFileUrl -OutFile $zipFilePath
-
-Expand-Archive -Path $zipFilePath -DestinationPath "C:\"
-
-Copy-Item -Path "C:\LON-DC1_C-main\Labfiles" -Destination "C:\Labfiles" -Recurse
-Remove-Item -Path "C:\LON-DC1_C-main" -Recurse -Force
-
-===================================================================================================
-
-
-$zipFileUrl = "https://github.com/AqStudio1/LON-CL1_C/archive/refs/heads/main.zip"
-$zipFilePath = "C:\Users\Administrator.ADATUM\Downloads\repository.zip"
-
-Invoke-WebRequest -Uri $zipFileUrl -OutFile $zipFilePath
-
-Expand-Archive -Path $zipFilePath -DestinationPath "C:\"
-
-Copy-Item -Path "C:\LON-CL1_C-main\Files" -Destination "C:\Files" -Recurse
-Copy-Item -Path "C:\LON-CL1_C-main\Labfiles" -Destination "C:\Labfiles" -Recurse
-Remove-Item -Path "C:\LON-CL1_C-main" -Recurse -Force
-
-===================================================================================================
-
-
-
-
-
-===================================================================================================
-All scripts need to be modified
-
-
-
-
-
-
-
-Task 2: Use a Windows PowerShell Script
-lon-dc1 place script
-
-
-
-Customize Windows Start and Taskbar Layouts -> need to modift 2nd eercise
-Task 2: Export the Start layout
-create labfiles folder in c to save layout
-
-
-
-Configuring Windows Settings using Group Policy
-add all users in groups as well as OUs
-
-
-
-Exercise 2: Configuring Automatic IPv4 Settings
-
-
-Task 1: Install Windows Admin Center
-In File Explorer, browse to D:\Labfiles\Tools, and then double-click WindowsAdminCenter2110.msi. Windows Installer begins the installation process.
-
-
-ractice Lab: Managing Storage
-
-
-Practice Lab: Creating a Storage Space
-356874
